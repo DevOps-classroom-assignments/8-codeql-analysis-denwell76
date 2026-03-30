@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
 
@@ -54,4 +54,4 @@ jobs:
         run: sleep 5
 
       - name: Test endpoint
-        run: curl "http://localhost:8080/readfile?file=hello.txt"
+        run: curl "http://localhost:8080/readfile?file=safe-files/hello.txt"
