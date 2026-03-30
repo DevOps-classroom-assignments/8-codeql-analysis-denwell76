@@ -8,10 +8,28 @@ on:
 
 jobs:
   analyze:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+        matrix:
+          language: ['go']
+
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      
     # Use ubuntu-latest for the analysis job
     # Define permissions for the job
     # Define language to be analyzed
-    name: CodeQL Analysis
+    
 
   docker:
     name: Docker Build & Run

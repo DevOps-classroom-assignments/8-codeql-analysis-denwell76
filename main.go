@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os/exec"
-	"path/filepath"
+
 )
 
 const allowedDir = "./safe-files"
